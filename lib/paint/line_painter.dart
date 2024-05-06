@@ -13,12 +13,6 @@ class LinePainter extends CustomPainter {
     ..strokeWidth = 6
     ..strokeCap = StrokeCap.round;
 
-  static final linePaintTest = Paint()
-    ..color = Colors.green
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = 6
-    ..strokeCap = StrokeCap.round;
-
   static const _gap = 12.0;
 
   @override
@@ -30,8 +24,11 @@ class LinePainter extends CustomPainter {
     final point2 = min(widthProgress, size.width);
 
     canvas.drawLine(Offset(0, height), Offset(point1, height), linePaint);
-    canvas.drawLine(Offset(point2 + _gap, height), Offset(size.width, height),
-        linePaintTest);
+    canvas.drawLine(
+      Offset(point2 + _gap, height),
+      Offset(size.width, height),
+      linePaint,
+    );
   }
 
   @override
